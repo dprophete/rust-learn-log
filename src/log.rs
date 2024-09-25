@@ -1,6 +1,6 @@
 use colored::Colorize;
 
-const SECTION_WIDTH: usize = 24;
+const SECTION_WIDTH: usize = 20;
 
 // log
 pub fn log(msg: &str) {
@@ -17,19 +17,14 @@ pub fn llog(section: &str, msg: &str) {
     println!(
         "{} {} {}",
         pp_now().yellow(),
-        pp_section(section).blue(),
+        pp_section(section).cyan(),
         msg
     );
 }
 
 // long log error
 pub fn lloge(section: &str, msg: &str) {
-    println!(
-        "{} {} {}",
-        pp_now().yellow(),
-        pp_section(section).blue(),
-        msg
-    );
+    println!("{} {} {}", pp_now().red(), pp_section(section).cyan(), msg);
 }
 
 //--------------------------------------------------------------------------------
